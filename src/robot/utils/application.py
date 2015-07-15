@@ -44,6 +44,7 @@ class Application(object):
             rc = self._execute(arguments, options)
         self._exit(rc)
 
+
     def console(self, msg):
         if msg:
             print encode_output(msg)
@@ -105,7 +106,9 @@ class Application(object):
         return rc
 
     def _exit(self, rc):
-        sys.exit(rc)
+        #sys.exit(rc)
+        import os
+        os._exit(rc)
 
 
 class DefaultLogger(object):
